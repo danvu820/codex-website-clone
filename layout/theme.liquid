@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{{ shop.name }}{% if page_title %} — {{ page_title }}{% endif %}</title>
+    {{ content_for_header }}
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+  </head>
+  <body>
+    {% section 'announcement-bar' %}
+    {% section 'site-header' %}
+    <main id="MainContent" role="main">
+      {{ content_for_layout }}
+    </main>
+    {% section 'site-footer' %}
+  </body>
+</html>

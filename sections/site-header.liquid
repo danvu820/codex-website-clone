@@ -1,0 +1,17 @@
+<header class="nav-wrap">
+  <a href="{{ routes.root_url }}" class="brand" aria-label="Neruva Home">
+    {{ 'neruva-logo.svg' | asset_url | image_tag: alt: 'Neruva', loading: 'eager' }}
+  </a>
+  <nav class="nav-left" aria-label="Primary">
+    <a href="{{ routes.root_url }}">Home</a>
+    <a href="/collections/all">Shop All</a>
+    <a href="/pages/help">Help</a>
+  </nav>
+</header>
+
+{% schema %}
+{
+  "name": "Site header",
+  "settings": []
+}
+{% endschema %}

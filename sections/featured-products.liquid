@@ -1,0 +1,23 @@
+<section class="bestsellers section">
+  <h3>Shop the Neruva Collection</h3>
+  <a href="/collections/all">Shop All</a>
+  <div class="product-grid">
+    {% for product in collections.all.products limit: 3 %}
+      <article>
+        {{ product.featured_image | image_url: width: 900 | image_tag: alt: product.title }}
+        <h4>{{ product.title }}</h4>
+        <p>{{ product.description | strip_html | truncate: 110 }}</p>
+        <div class="price">{{ product.price | money }}</div>
+        <a class="button" href="{{ product.url }}">Shop Now</a>
+      </article>
+    {% else %}
+      <p>Add products in Shopify admin to populate this section.</p>
+    {% endfor %}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Featured products",
+  "settings": []
+}
+{% endschema %}
