@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Theme settings",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background",
+        "default": "#F4EFE7"
+      }
+    ]
+  }
+]
