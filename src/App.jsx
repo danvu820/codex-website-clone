@@ -16,7 +16,7 @@ function Header({ currentPath, onNavigate }) {
   return (
     <header className="nav-wrap">
       <a href="/" className="brand" onClick={(e) => onNavigate(e, '/')}>
-        <img src="/neruva-logo.svg" alt="Neruva" />
+        <img src="/neruva-logo.svg" alt="Neruva" className="brand-image" />
       </a>
       <nav className="nav-left">
         {NAV_ITEMS.map((item) => (
