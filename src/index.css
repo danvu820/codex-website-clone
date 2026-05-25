@@ -10,7 +10,7 @@
 body { margin: 0; background: var(--bg); color: var(--text); }
 .top-marquee,.hero-bar,.logos,footer { background: var(--deep); color: #f4efe7; }
 .top-marquee { text-align: center; font-weight: 700; font-size: 14px; padding: 4px 0; }
-.nav-wrap { height: 74px; display:flex; align-items:center; justify-content:flex-start; gap: 2.5rem; padding:0 28px; background:var(--surface); border-bottom:1px solid #d7cebf; }
+.nav-wrap { position: sticky; top: 0; z-index: 80; height: 74px; display:flex; align-items:center; justify-content:flex-start; gap: 2.5rem; padding:0 28px; background:var(--surface); border-bottom:1px solid #d7cebf; }
 .brand-image { height: 44px; width: auto; display:block; }
 .nav-left { display:flex; gap:30px; align-items:center; }
 .nav-left a { color: var(--text); text-decoration:none; font-size: 18px; font-weight:600; padding-bottom:4px; border-bottom:2px solid transparent; }
