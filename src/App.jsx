@@ -15,21 +15,37 @@ const NAV_ITEMS = [
 function Header({ currentPath, onNavigate }) {
   return (
     <header className="nav-wrap">
-      <a href="/" className="brand" onClick={(e) => onNavigate(e, '/')}>
-        <img src="/neruva-logo.svg" alt="Neruva" className="brand-image" />
-      </a>
-      <nav className="nav-left">
-        {NAV_ITEMS.map((item) => (
-          <a
-            key={item.path}
-            href={item.path}
-            onClick={(e) => onNavigate(e, item.path)}
-            className={currentPath === item.path ? 'active' : ''}
-          >
-            {item.label}
+      <div className="header-mobile">
+        <button className="mobile-menu-button" type="button" aria-label="Open menu">☰</button>
+        <a href="/" className="brand" onClick={(e) => onNavigate(e, '/')}>
+          <img src="/neruva-logo.svg" alt="Neruva" className="brand-image" />
+        </a>
+        <button className="mobile-cart-button" type="button" aria-label="Cart">🛒</button>
+      </div>
+
+      <div className="header-desktop">
+        <a href="/" className="brand" onClick={(e) => onNavigate(e, '/')}>
+          <img src="/neruva-logo.svg" alt="Neruva" className="brand-image" />
+        </a>
+        <nav className="nav-left">
+          {NAV_ITEMS.map((item) => (
+            <a
+              key={item.path}
+              href={item.path}
+              onClick={(e) => onNavigate(e, item.path)}
+              className={currentPath === item.path ? 'active' : ''}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+        <div className="header-actions">
+          <a href="/shop" className="header-cta" onClick={(e) => onNavigate(e, '/shop')}>
+            Shop Collection
           </a>
-        ))}
-      </nav>
+          <button className="desktop-cart-button" type="button" aria-label="Cart">🛒</button>
+        </div>
+      </div>
     </header>
   );
 }
