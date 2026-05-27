@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import neruvaLogo from '/neruva-logo.svg';
 
 const bestSellers = [
   { title: 'Neruva Restore Pillow', reviews: '(6,416)', description: 'Balanced support for light sleepers and high-stress routines, designed for calmer nights and better mornings.', price: '$89', compareAt: '$140', image: 'https://images.unsplash.com/photo-1585559605151-3e9978e1f38b?auto=format&fit=crop&w=900&q=80' },
@@ -18,14 +19,14 @@ function Header({ currentPath, onNavigate }) {
       <div className="header-mobile">
         <button className="mobile-menu-button" type="button" aria-label="Open menu">☰</button>
         <a href="/" className="brand" onClick={(e) => onNavigate(e, '/')}>
-          <img src="/neruva-logo.svg" alt="Neruva" className="brand-image" />
+          <img src={neruvaLogo} alt="Neruva" className="brand-image" />
         </a>
         <button className="mobile-cart-button" type="button" aria-label="Cart">🛒</button>
       </div>
 
       <div className="header-desktop">
         <a href="/" className="brand" onClick={(e) => onNavigate(e, '/')}>
-          <img src="/neruva-logo.svg" alt="Neruva" className="brand-image" />
+          <img src={neruvaLogo} alt="Neruva" className="brand-image" />
         </a>
         <nav className="nav-left">
           {NAV_ITEMS.map((item) => (
