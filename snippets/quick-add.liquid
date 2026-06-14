@@ -1,0 +1,14 @@
+{% assign selected_variant = product.selected_or_first_available_variant %}
+
+{% if selected_variant and product.available %}
+  <form class="quick-add-form" action="{{ routes.cart_add_url }}" method="post" data-quick-add-form>
+    <input type="hidden" name="id" value="{{ selected_variant.id }}">
+    <input type="hidden" name="quantity" value="1">
+    <button class="button quick-add-form__button" type="submit" data-quick-add-button>
+      <span data-quick-add-label>Add to Cart</span>
+    </button>
+    <p class="quick-add-form__message" data-quick-add-message role="status" aria-live="polite"></p>
+  </form>
+{% else %}
+  <a class="button quick-add-form__button" href="{{ product.url }}">View Product</a>
+{% endif %}
