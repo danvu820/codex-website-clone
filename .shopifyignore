@@ -1,0 +1,13 @@
+# React/Vite prototype files
+src/
+public/
+index.html
+vite.config.js
+package.json
+package-lock.json
+
+# Build output
+dist/
+
+# Dependency directories
+node_modules/
