@@ -6,6 +6,7 @@
     <title>{{ shop.name }}{% if page_title %} — {{ page_title }}{% endif %}</title>
     {{ content_for_header }}
     {{ 'theme.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'cart.js' | asset_url }}" defer></script>
   </head>
   <body>
     {% section 'announcement-bar' %}
@@ -14,5 +15,6 @@
       {{ content_for_layout }}
     </main>
     {% section 'site-footer' %}
+    {% render 'cart-drawer' %}
   </body>
 </html>
