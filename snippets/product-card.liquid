@@ -1,0 +1,19 @@
+<article class="product-card" data-product-card>
+  <a class="product-card__media" href="{{ product.url }}" aria-label="View {{ product.title | escape }}">
+    {% if product.featured_image %}
+      {{ product.featured_image | image_url: width: 900 | image_tag: alt: product.title, loading: 'lazy' }}
+    {% else %}
+      {{ 'product-1' | placeholder_svg_tag: 'product-card__placeholder' }}
+    {% endif %}
+  </a>
+
+  <div class="product-card__content">
+    <h4 class="product-card__title">
+      <a href="{{ product.url }}">{{ product.title }}</a>
+    </h4>
+    <p>{{ product.description | strip_html | truncate: 110 }}</p>
+    <div class="price">{{ product.price | money }}</div>
+
+    {% render 'quick-add', product: product %}
+  </div>
+</article>

@@ -1,0 +1,29 @@
+<div class="cart-drawer" data-cart-drawer aria-hidden="true">
+  <button class="cart-drawer__overlay" type="button" data-cart-close aria-label="Close cart"></button>
+
+  <aside class="cart-drawer__panel" role="dialog" aria-modal="true" aria-labelledby="cart-drawer-title" tabindex="-1">
+    <div class="cart-drawer__header">
+      <h2 id="cart-drawer-title">Your Cart</h2>
+      <button class="cart-drawer__close button-unstyled" type="button" data-cart-close aria-label="Close cart">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+
+    <div class="cart-drawer__body" data-cart-items>
+      <div class="cart-drawer__empty">
+        <p>Your cart is empty</p>
+        <a class="button" href="/collections/all">Continue shopping</a>
+      </div>
+    </div>
+
+    <div class="cart-drawer__footer" data-cart-footer hidden>
+      <div class="cart-drawer__subtotal">
+        <span>Subtotal</span>
+        <strong data-cart-subtotal>{{ cart.total_price | money }}</strong>
+      </div>
+      <a class="button cart-drawer__checkout" href="{{ routes.cart_url }}">View Cart & Checkout</a>
+    </div>
+
+    <p class="visually-hidden" data-cart-live-region role="status" aria-live="polite"></p>
+  </aside>
+</div>
