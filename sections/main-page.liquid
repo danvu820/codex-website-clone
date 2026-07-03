@@ -1,0 +1,19 @@
+<section class="page-section section">
+  <div class="page-section__inner">
+    <header class="page-section__header">
+      <p class="page-section__eyebrow">Neruva</p>
+      <h1>{{ page.title | escape }}</h1>
+    </header>
+
+    <div class="page-section__content rte">
+      {{ page.content }}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main page",
+  "settings": []
+}
+{% endschema %}
