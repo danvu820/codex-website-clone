@@ -2,39 +2,38 @@
   <div class="neruva-shell">
     <div class="neruva-footer__grid">
       <div class="neruva-footer__column neruva-footer__brand">
-        <a href="{{ routes.root_url }}" aria-label="{{ shop.name }} home">
-          <img src="{{ 'neruva-logo.svg' | asset_url }}" alt="{{ shop.name }}" class="neruva-footer__brand-image" width="250" height="56" loading="lazy">
+        <a href="{{ routes.root_url }}" aria-label="Neruva home">
+          <img src="{{ 'neruva-logo.svg' | asset_url }}" alt="Neruva" class="neruva-footer__brand-image" width="250" height="56" loading="lazy">
         </a>
-        <p class="neruva-footer__copy">Premium sleep essentials for softer nights, calmer routines, and better mornings.</p>
+        <p class="neruva-footer__copy">Premium sleep essentials for calmer routines, softer nights, and clearer mornings.</p>
       </div>
 
       <nav class="neruva-footer__column" aria-labelledby="FooterShopHeading">
         <h2 id="FooterShopHeading">Shop</h2>
-        <ul>
-          <li><a href="{{ routes.root_url }}">Home</a></li>
-          <li><a href="/collections/all">Shop All</a></li>
-          <li><a href="/pages/contact">Contact</a></li>
-        </ul>
+        <div class="neruva-footer__links">
+          <a href="/collections/all">Shop All</a>
+          <a href="/pages/contact">Contact</a>
+        </div>
       </nav>
 
       <nav class="neruva-footer__column" aria-labelledby="FooterSupportHeading">
         <h2 id="FooterSupportHeading">Support</h2>
-        <ul>
-          <li><a href="/pages/privacy-policy">Privacy</a></li>
-          <li><a href="/pages/shipping-policy">Shipping</a></li>
-          <li><a href="/pages/returns">Returns</a></li>
-          <li><a href="/pages/faq">FAQ</a></li>
-        </ul>
+        <div class="neruva-footer__links">
+          <a href="/pages/privacy-policy">Privacy</a>
+          <a href="/pages/shipping-policy">Shipping</a>
+          <a href="/pages/returns">Returns</a>
+          <a href="/pages/faq">FAQ</a>
+        </div>
       </nav>
 
       <div class="neruva-footer__column">
         <h2>Stay in the loop</h2>
-        <p class="neruva-footer__copy">Get calming sleep tips, product updates, and exclusive offers from Neruva.</p>
+        <p class="neruva-footer__copy">Get product updates, sleep tips, and exclusive offers from Neruva.</p>
         {% form 'customer', class: 'neruva-footer__newsletter' %}
           <input type="hidden" name="contact[tags]" value="newsletter">
           <div class="neruva-footer__newsletter-row">
             <label class="sr-only" for="FooterNewsletterEmail">Email address</label>
-            <input id="FooterNewsletterEmail" type="email" name="contact[email]" value="{{ form.email }}" autocorrect="off" autocapitalize="off" autocomplete="email" placeholder="Email address" required>
+            <input id="FooterNewsletterEmail" type="email" name="contact[email]" value="{{ form.email | escape }}" autocorrect="off" autocapitalize="off" autocomplete="email" placeholder="Email address" required>
             <button type="submit">Subscribe</button>
           </div>
           <div class="neruva-footer__newsletter-status" role="status">
@@ -81,7 +80,7 @@
     </div>
 
     <div class="neruva-footer__bottom">
-      <small>Copyright {{ 'now' | date: '%Y' }}, <a href="{{ routes.root_url }}">{{ shop.name }}</a></small>
+      <small>Copyright {{ 'now' | date: '%Y' }}, <a href="{{ routes.root_url }}">Neruva</a></small>
     </div>
   </div>
 </footer>
