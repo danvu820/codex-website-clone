@@ -1,0 +1,42 @@
+<section class="collection-section section">
+  <div class="collection-section__header">
+    <p class="collection-section__eyebrow">Neruva Collection</p>
+    <h1>{{ collection.title | escape }}</h1>
+    {% if collection.description != blank %}
+      <div class="collection-section__description rte">
+        {{ collection.description }}
+      </div>
+    {% endif %}
+  </div>
+
+  {% paginate collection.products by 12 %}
+    <div class="product-grid collection-section__grid">
+      {% for product in collection.products %}
+        {% render 'product-card', product: product %}
+      {% else %}
+        <p class="collection-section__empty">Add products in Shopify admin to populate this collection.</p>
+      {% endfor %}
+    </div>
+
+    {% if paginate.pages > 1 %}
+      <nav class="collection-pagination" role="navigation" aria-label="Pagination">
+        {% if paginate.previous %}
+          <a class="collection-pagination__link" href="{{ paginate.previous.url }}">Previous</a>
+        {% endif %}
+
+        <span class="collection-pagination__status">Page {{ paginate.current_page }} of {{ paginate.pages }}</span>
+
+        {% if paginate.next %}
+          <a class="collection-pagination__link" href="{{ paginate.next.url }}">Next</a>
+        {% endif %}
+      </nav>
+    {% endif %}
+  {% endpaginate %}
+</section>
+
+{% schema %}
+{
+  "name": "Main collection",
+  "settings": []
+}
+{% endschema %}
