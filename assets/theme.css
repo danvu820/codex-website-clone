@@ -1,5 +1,6 @@
-:root{--bg:#f4efe7;--text:#5f6b57;--accent:#7c8a72;--surface:#ffffff;--deep:#4e5a46;font-family:Inter,system-ui,sans-serif}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text)}
+@font-face{font-family:'Aperçu';font-display:swap;font-style:normal;font-weight:400;src:url('https://cdn.shopify.com/s/files/1/2960/5204/files/apercu-regular.woff2?v=1719305570') format('woff2'),url('https://cdn.shopify.com/s/files/1/2960/5204/files/apercu-regular.woff?v=1719305571') format('woff')}
+:root{--bg:#f4efe7;--text:#5f6b57;--accent:#7c8a72;--surface:#ffffff;--deep:#4e5a46;--font-family-heading:'Aperçu';--font-family-body:'Aperçu'}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-family-body),'Helvetica Neue',Helvetica,Arial,sans-serif}button,input,select,textarea{font-family:inherit}h1,h2,h3,h4,h5,h6{font-family:var(--font-family-heading),'Helvetica Neue',Helvetica,Arial,sans-serif}
 a{color:inherit}.button{display:inline-block;text-decoration:none;border-radius:999px;background:var(--accent);color:#fff;padding:14px 32px;font-weight:700}
 .top-marquee,.hero-bar,footer{background:var(--deep);color:#f4efe7}.top-marquee{text-align:center;font-weight:700;font-size:14px;padding:4px 0}
 .nav-wrap{height:74px;display:flex;align-items:center;gap:2.5rem;padding:0 28px;background:var(--surface);border-bottom:1px solid #d7cebf}.brand-image{height:44px;width:auto;display:block}.nav-left{display:flex;gap:30px}.nav-left a{text-decoration:none;font-size:18px;font-weight:600}

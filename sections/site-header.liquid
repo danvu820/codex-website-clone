@@ -1,6 +1,10 @@
 <header class="nav-wrap">
   <a href="{{ routes.root_url }}" class="brand" aria-label="Neruva Home">
-    <img src="{{ 'neruva-logo.svg' | asset_url }}" alt="Neruva" class="brand-image" width="220" height="49" loading="eager">
+    {% if settings.logo != blank %}
+      <img src="{{ settings.logo | image_url: width: 440 }}" alt="{{ settings.logo.alt | default: shop.name | escape }}" class="brand-image" width="220" height="{{ 220 | divided_by: settings.logo.aspect_ratio | round }}" loading="eager">
+    {% else %}
+      <img src="{{ 'neruva-logo.svg' | asset_url }}" alt="Neruva" class="brand-image" width="220" height="49" loading="eager">
+    {% endif %}
   </a>
   <nav class="nav-left" aria-label="Primary">
     <a href="/collections/all">Shop All</a>

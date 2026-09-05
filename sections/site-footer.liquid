@@ -3,7 +3,11 @@
     <div class="neruva-footer__grid">
       <div class="neruva-footer__column neruva-footer__brand">
         <a href="{{ routes.root_url }}" aria-label="Neruva home">
-          <img src="{{ 'neruva-logo.svg' | asset_url }}" alt="Neruva" class="neruva-footer__brand-image" width="250" height="56" loading="lazy">
+          {% if settings.logo != blank %}
+            <img src="{{ settings.logo | image_url: width: 500 }}" alt="{{ settings.logo.alt | default: shop.name | escape }}" class="neruva-footer__brand-image" width="250" height="{{ 250 | divided_by: settings.logo.aspect_ratio | round }}" loading="lazy">
+          {% else %}
+            <img src="{{ 'neruva-logo.svg' | asset_url }}" alt="Neruva" class="neruva-footer__brand-image" width="250" height="56" loading="lazy">
+          {% endif %}
         </a>
         <p class="neruva-footer__copy">Premium sleep essentials for calmer routines, softer nights, and clearer mornings.</p>
       </div>
